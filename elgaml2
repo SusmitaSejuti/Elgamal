@@ -1,0 +1,18 @@
+p=8599
+a=6
+x=7
+y=pow(x,a,p)
+print("private key "+str(a))
+r=5
+c1=pow(x,r,p)
+m=int(input("Input message= "))
+c2=(m*pow(y,r))%p
+print("Encrypted : "+str(c1),str(c2))
+i=5
+while(1):
+    i=i+1
+    n=pow(c1,a)*i
+    if(n%p==1):
+        break
+d=(c2*i)%p
+print("Decrypted : "+str(d))
